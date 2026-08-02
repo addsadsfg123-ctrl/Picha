@@ -37,7 +37,7 @@ const cards = [
     },
     {
         image: "ZfCyyRaCrfg.jpg",
-        text: "А здесь ты Апаснать"
+        text: "А здесь ты Апаснасть"
     }
 ];
 
