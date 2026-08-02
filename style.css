@@ -1,1 +1,52 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:#fafafa;
+
+    font-family:Georgia, serif;
+}
+
+.card{
+    width:90%;
+    max-width:420px;
+
+    text-align:center;
+
+    cursor:pointer;
+}
+
+#photo{
+    width:100%;
+    aspect-ratio:4/5;
+
+    object-fit:cover;
+
+    border-radius:18px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+
+    transition:.45s;
+}
+
+#caption{
+    margin-top:22px;
+
+    font-size:22px;
+
+    color:#444;
+
+    line-height:1.5;
+
+    min-height:70px;
+
+    transition:.35s;
+}
