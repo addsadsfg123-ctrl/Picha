@@ -47,19 +47,31 @@ const caption = document.getElementById("caption");
 let current = 0;
 let animating = false;
 
-function showCard(index) {
+function showCard(index){
+
+    photo.classList.add("flip");
+
     photo.style.opacity = 0;
     caption.style.opacity = 0;
 
-    setTimeout(() => {
+    setTimeout(()=>{
+
         photo.src = cards[index].image;
         caption.textContent = cards[index].text;
+
+        photo.classList.remove("flip");
+        photo.classList.add("next");
 
         photo.style.opacity = 1;
         caption.style.opacity = 1;
 
-        animating = false;
-    }, 300);
+        setTimeout(()=>{
+            photo.classList.remove("next");
+            animating=false;
+        },250);
+
+    },300);
+
 }
 
 photo.addEventListener("click", () => {
