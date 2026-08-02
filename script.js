@@ -41,59 +41,57 @@ const cards = [
     }
 ];
 
+
 const photo = document.getElementById("photo");
 const caption = document.getElementById("caption");
+const cover = document.getElementById("cover");
+
 
 let current = 0;
 let animating = false;
 
-function showCard(index){
 
-    photo.classList.add("flip");
+// первое фото
+photo.src = cards[0].image;
+caption.textContent = cards[0].text;
+
+
+// открытие альбома
+setTimeout(() => {
+    cover.classList.add("hide-cover");
+}, 1800);
+
+
+// смена фото
+photo.addEventListener("click", () => {
+
+    if(animating) return;
+
+    animating = true;
 
     photo.style.opacity = 0;
     caption.style.opacity = 0;
 
-    setTimeout(()=>{
 
-        photo.src = cards[index].image;
-        caption.textContent = cards[index].text;
+    setTimeout(() => {
 
-        photo.classList.remove("flip");
-        photo.classList.add("next");
+        current++;
+
+        if(current >= cards.length){
+            current = 0;
+        }
+
+
+        photo.src = cards[current].image;
+        caption.textContent = cards[current].text;
+
 
         photo.style.opacity = 1;
         caption.style.opacity = 1;
 
-        setTimeout(()=>{
-            photo.classList.remove("next");
-            animating=false;
-        },250);
 
-    },300);
+        animating = false;
 
-}
+    },350);
 
-photo.addEventListener("click", () => {
-    if (animating) return;
-
-    animating = true;
-
-    current++;
-
-    if (current >= cards.length) {
-        current = 0;
-    }
-
-    showCard(current);
 });
-
-photo.src = cards[0].image;
-caption.textContent = cards[0].text;
-photo.style.opacity = 1;
-caption.style.opacity = 1;
-const cover = document.getElementById("cover");
-
-setTimeout(() => {
-    cover.classList.add("hide-cover");
-}, 1800);
