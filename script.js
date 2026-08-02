@@ -92,3 +92,8 @@ photo.src = cards[0].image;
 caption.textContent = cards[0].text;
 photo.style.opacity = 1;
 caption.style.opacity = 1;
+const cover = document.getElementById("cover");
+
+setTimeout(() => {
+    cover.classList.add("hide-cover");
+}, 1800);
