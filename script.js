@@ -51,29 +51,18 @@ let current = 0;
 let animating = false;
 
 
-// первое фото
-photo.src = cards[0].image;
-caption.textContent = cards[0].text;
-
-
-// открытие альбома
-setTimeout(() => {
-    cover.classList.add("hide-cover");
-}, 1800);
-
-
-// смена фото
-photo.addEventListener("click", () => {
+function changePhoto(){
 
     if(animating) return;
 
     animating = true;
 
+
     photo.style.opacity = 0;
     caption.style.opacity = 0;
 
 
-    setTimeout(() => {
+    setTimeout(()=>{
 
         current++;
 
@@ -92,6 +81,21 @@ photo.addEventListener("click", () => {
 
         animating = false;
 
-    },350);
+    },400);
 
-});
+}
+
+
+// клик по фото
+photo.onclick = changePhoto;
+
+
+// первое фото
+photo.src = cards[0].image;
+caption.textContent = cards[0].text;
+
+
+// обложка
+setTimeout(()=>{
+    cover.classList.add("hide-cover");
+},1800);
