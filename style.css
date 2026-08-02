@@ -19,25 +19,61 @@ body{
     width:90%;
     max-width:420px;
 
+    background:white;
+
+    padding:18px 18px 30px;
+
+    border-radius:10px;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.15);
+
     text-align:center;
 
     cursor:pointer;
+
+    transition:transform .45s;
 }
 
 #photo{
     width:100%;
     aspect-ratio:4/5;
+
     object-fit:cover;
-    border-radius:18px;
-    box-shadow:0 15px 35px rgba(0,0,0,.12);
-    transition:opacity .3s ease;
+
+    border-radius:6px;
+
+    transition:
+        opacity .35s,
+        transform .45s;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
 }
 
 #caption{
-    margin-top:22px;
-    font-size:22px;
-    color:#444;
-    line-height:1.5;
-    min-height:70px;
-    transition:opacity .3s ease;
+    margin-top:20px;
+
+    font-size:23px;
+
+    font-style:italic;
+
+    color:#555;
+
+    min-height:65px;
+
+    transition:opacity .35s;
+}
+body{
+    background:#f7f3ee;
+}
+
+.flip{
+    transform:
+        rotate(6deg)
+        scale(0.97);
+}
+
+.next{
+    transform:
+        rotate(-4deg)
+        scale(1.03);
 }
